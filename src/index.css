@@ -1,0 +1,315 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system with nature-inspired colors */
+
+@layer base {
+  :root {
+    /* Base theme colors with improved contrast */
+    --background: 120 20% 98%;
+    --foreground: 140 30% 15%;
+
+    --card: 120 15% 96%;
+    --card-foreground: 140 30% 15%;
+
+    --popover: 120 15% 96%;
+    --popover-foreground: 140 30% 15%;
+
+    --primary: 135 50% 30%;
+    --primary-foreground: 120 20% 98%;
+
+    --secondary: 120 10% 90%;
+    --secondary-foreground: 140 30% 15%;
+
+    --muted: 120 10% 92%;
+    --muted-foreground: 140 15% 45%;
+
+    --accent: 125 35% 85%;
+    --accent-foreground: 140 30% 15%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 15% 85%;
+    --input: 120 15% 85%;
+    --ring: 135 50% 30%;
+
+    --radius: 0.75rem;
+
+    /* Enhanced garden color system */
+    --garden-green: 135 50% 30%;
+    --garden-light: 120 30% 96%;
+    --garden-accent: 85 45% 55%;
+    --earth-brown: 30 25% 45%;
+    
+    /* Nature palette with better contrast */
+    --nature-green: 140 60% 35%;
+    --sage-green: 90 35% 40%;
+    --sky-blue: 200 70% 50%;
+    --earth-texture: 25 20% 50%;
+    --sunset-orange: 30 80% 60%;
+    
+    /* Customizable background themes */
+    --bg-nature: linear-gradient(135deg, hsl(120 30% 97%) 0%, hsl(135 25% 94%) 50%, hsl(125 35% 92%) 100%);
+    --bg-sky: linear-gradient(135deg, hsl(200 60% 96%) 0%, hsl(210 50% 94%) 50%, hsl(220 40% 92%) 100%);
+    --bg-earth: linear-gradient(135deg, hsl(30 40% 96%) 0%, hsl(25 35% 94%) 50%, hsl(20 30% 92%) 100%);
+    --bg-minimal: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 96%) 50%, hsl(0 0% 94%) 100%);
+    
+    /* Interactive element styles */
+    --button-shadow: 0 2px 8px hsl(var(--primary) / 0.15);
+    --card-shadow: 0 4px 20px hsl(140 30% 15% / 0.08);
+    --hover-shadow: 0 8px 30px hsl(140 30% 15% / 0.12);
+    
+    /* High contrast mode overrides */
+    --contrast-bg: 0 0% 100%;
+    --contrast-text: 0 0% 0%;
+    --contrast-border: 0 0% 20%;
+  }
+
+  .dark {
+    --background: 140 30% 6%;
+    --foreground: 120 20% 96%;
+
+    --card: 140 25% 8%;
+    --card-foreground: 120 20% 96%;
+
+    --popover: 140 25% 8%;
+    --popover-foreground: 120 20% 96%;
+
+    --primary: 135 50% 65%;
+    --primary-foreground: 140 30% 6%;
+
+    --secondary: 140 20% 12%;
+    --secondary-foreground: 120 20% 96%;
+
+    --muted: 140 20% 12%;
+    --muted-foreground: 120 15% 70%;
+
+    --accent: 135 30% 18%;
+    --accent-foreground: 120 20% 96%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 20% 18%;
+    --input: 140 20% 18%;
+    --ring: 135 50% 65%;
+
+    /* Dark theme background options */
+    --bg-nature: linear-gradient(135deg, hsl(140 30% 8%) 0%, hsl(135 25% 10%) 50%, hsl(125 35% 12%) 100%);
+    --bg-sky: linear-gradient(135deg, hsl(200 40% 8%) 0%, hsl(210 35% 10%) 50%, hsl(220 30% 12%) 100%);
+    --bg-earth: linear-gradient(135deg, hsl(30 30% 8%) 0%, hsl(25 25% 10%) 50%, hsl(20 20% 12%) 100%);
+    --bg-minimal: linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 10%) 100%);
+  }
+
+  /* Theme variations */
+  .theme-nature {
+    --primary: 135 50% 35%;
+    --garden-green: 135 50% 35%;
+    --garden-accent: 85 45% 55%;
+  }
+
+  .theme-sky {
+    --primary: 200 70% 45%;
+    --garden-green: 200 70% 45%;
+    --garden-accent: 210 60% 65%;
+  }
+
+  .theme-earth {
+    --primary: 30 60% 45%;
+    --garden-green: 30 60% 45%;
+    --garden-accent: 25 55% 60%;
+  }
+
+  .theme-minimal {
+    --primary: 0 0% 20%;
+    --garden-green: 0 0% 20%;
+    --garden-accent: 0 0% 40%;
+  }
+
+  /* High contrast mode */
+  .high-contrast {
+    --background: var(--contrast-bg);
+    --foreground: var(--contrast-text);
+    --border: var(--contrast-border);
+    --card: var(--contrast-bg);
+    --card-foreground: var(--contrast-text);
+  }
+
+  /* Compact layout */
+  .compact-layout {
+    --spacing-unit: 0.75rem;
+  }
+
+  .compact-layout .container {
+    padding: var(--spacing-unit);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Enhanced nature animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes grow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bloom {
+  0% { 
+    transform: scale(0.8) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-grow {
+  animation: grow 2s ease-in-out infinite;
+}
+
+.animate-leaf-sway {
+  animation: leaf-sway 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  background-size: 200% 100%;
+}
+
+.animate-bloom {
+  animation: bloom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-pulse-gentle {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+/* Enhanced gradient backgrounds with theme support */
+.bg-garden-gradient {
+  background: var(--bg-nature);
+}
+
+.bg-garden-gradient.theme-sky {
+  background: var(--bg-sky);
+}
+
+.bg-garden-gradient.theme-earth {
+  background: var(--bg-earth);
+}
+
+.bg-garden-gradient.theme-minimal {
+  background: var(--bg-minimal);
+}
+
+.bg-earth-gradient {
+  background: linear-gradient(135deg, hsl(var(--garden-green)) 0%, hsl(var(--garden-accent)) 100%);
+}
+
+.bg-leaf-gradient {
+  background: linear-gradient(135deg, hsl(var(--nature-green)) 0%, hsl(var(--sage-green)) 100%);
+}
+
+.bg-sky-gradient {
+  background: linear-gradient(180deg, hsl(var(--sky-blue) / 0.3) 0%, hsl(var(--sky-blue) / 0.1) 100%);
+}
+
+.bg-glass-morphism {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Enhanced button and card styles */
+.enhanced-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enhanced-card:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-2px);
+}
+
+.enhanced-button {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: var(--button-shadow);
+  transition: all 0.2s ease;
+}
+
+.enhanced-button:hover {
+  background: hsl(var(--primary) / 0.9);
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.25);
+  transform: translateY(-1px);
+}
+
+/* Interactive hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
